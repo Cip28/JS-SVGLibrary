@@ -13,7 +13,7 @@ class SVGElement{
         return this;
         }
         append(element){
-            (typeof element==='string') ? document.querySelectorA(element) : element.node;
+           const parent=(typeof element==='string') ? document.querySelector(element) : element.node;
             parent.appendChild(this.node);
             return this;
         }
@@ -21,7 +21,8 @@ class SVGElement{
 
 class Sight{
     construtor(selector,width,height){
-        this.svg=new SVGElement('svg').attr({viewbox:`0 0 ${width} ${height}`}).append(selector);
+        this.svg=new SVGElement('svg').attr({viewbox:`0 0 ${width} ${height}`
+    }).append(selector);
     }
 
     draw(type,attrs){
